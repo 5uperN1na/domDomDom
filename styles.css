@@ -1,8 +1,17 @@
+.button{
+
+}
+
+
+
 .div {
     height: 50px;
     width: 50px;
-    border: 1px solid black;
-    background-color: yellow;
+    color: white;
+    text-align: center;
+    border: 1px solid red;
+    background-color:black;
+    float: left;
   }
 
  
