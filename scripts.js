@@ -28,15 +28,22 @@ window.addEventListener('DOMContentLoaded', function () {
         });
 
         //Created event listener when mouse hovers over div, the id is displayed.
-        div.addEventListener('mouseover', function () {
-            div.appendChild(divText);
+        //div.addEventListener('mouseover', function () {
+        //div.appendChild(divText);
 
-        });
+        //});
 
         //Created event listener when mouse leaves the div, the id does not display.
-        div.addEventListener('mouseleave', function () {
-            divText.remove();
-        });
+        //div.addEventListener('mouseleave', function () {
+        //divText.remove();
+        // });
+
+
+
+
+        div.addEventListener('moveover', hover);
+        div.addEventListener('mouseleave', removeHover);
+
 
 
 
@@ -55,15 +62,20 @@ window.addEventListener('DOMContentLoaded', function () {
                     alert("There are no more boxes!");
                 }
             }
-    
+
         });
+
 
 
     }
 
+
+
     button.addEventListener('click', insertSquare);
 
-    //create an array with random colors
+
+
+    //created an array with random colors
     let colors = [
         'pink',
         'blue',
@@ -81,7 +93,14 @@ window.addEventListener('DOMContentLoaded', function () {
     }
 
 
-    
+    function hover() {
+        div.appendChild(divText);
+    }
+
+    function removeHover() {
+        divText.remove();
+    }
+
 
 
 
