@@ -1,46 +1,65 @@
 window.addEventListener('DOMContentLoaded', function () {
 
-    //create div container
+    //Created div container
     let divContainer = document.createElement('div');
     document.body.appendChild(divContainer);
 
-    //create button
+    //Created button
     let button = document.createElement('button');
     let btnText = document.createTextNode('Add Square');
     button.appendChild(btnText);
     document.body.appendChild(button);
 
-    let i = 0;
+    //Created global variable for id increment.
+    let i = 1;
+
+    //Created function to add square (div) each time button is clicked.
     function insertSquare() {
         let div = document.createElement('div');
         let divText = document.createTextNode('Div ID:' + ' ' + i);
-        //div.appendChild(divText);
         div.className = 'div';
         divContainer.appendChild(div);
         div.setAttribute('i', i);
-
         i++;
 
         //Created event listener when each div is clicked, calls getRandom (color) function.
-        div.addEventListener("click", function () {
+        div.addEventListener('click', function () {
             div.style.backgroundColor = getRandom();
         });
 
+        //Created event listener when mouse hovers over div, the id is displayed.
         div.addEventListener('mouseover', function () {
             div.appendChild(divText);
-    
+
         });
-    
+
+        //Created event listener when mouse leaves the div, the id does not display.
         div.addEventListener('mouseleave', function () {
             divText.remove();
         });
 
 
 
+        div.addEventListener('dblclick', function () {
+
+            if (this.i % 2 === 0) {
+                if (this.nextSibling) {
+                    this.nextSibling.remove();
+                } else {
+                    alert("There are no more boxes!");
+                }
+            } else {
+                if (this.previousSibling) {
+                    this.previousSibling.remove();
+                } else {
+                    alert("There are no more boxes!");
+                }
+            }
+    
+        });
+
 
     }
-
-    //document.body.appendChild(div);
 
     button.addEventListener('click', insertSquare);
 
@@ -58,12 +77,11 @@ window.addEventListener('DOMContentLoaded', function () {
 
     //created a function that take color array and randomly assign color.
     function getRandom() {
-        let random = colors[Math.floor(Math.random() * colors.length)];
-        return random;
-
+        return colors[Math.floor(Math.random() * colors.length)];
     }
 
 
+    
 
 
 
