@@ -29,22 +29,22 @@ window.addEventListener('DOMContentLoaded', function () {
 
         //Created event listener when mouse hovers over div, the id is displayed.
         //div.addEventListener('mouseover', function () {
-        //div.appendChild(divText);
+       // div.appendChild(divText);
 
-        //});
+       // });
 
         //Created event listener when mouse leaves the div, the id does not display.
         //div.addEventListener('mouseleave', function () {
         //divText.remove();
         // });
 
-
-
-
+      
+       
+         
         div.addEventListener('moveover', hover);
+     
+        
         div.addEventListener('mouseleave', removeHover);
-
-
 
 
         div.addEventListener('dblclick', function () {
@@ -70,10 +70,7 @@ window.addEventListener('DOMContentLoaded', function () {
     }
 
 
-
     button.addEventListener('click', insertSquare);
-
-
 
     //created an array with random colors
     let colors = [
@@ -93,12 +90,14 @@ window.addEventListener('DOMContentLoaded', function () {
     }
 
 
-    function hover() {
+    function hover(divText) {
         div.appendChild(divText);
-    }
+         //console.log(this.id);
+     }
 
     function removeHover() {
-        divText.remove();
+       divText.remove();
+    
     }
 
 
