@@ -1,17 +1,72 @@
-.button{
-
+/*body{
+  position: relative;
+  display: block;
+  width: 100%;
 }
+*/
 
+/*button {
+  background-color: lightgrey;
+  border: gray;
+  color: black;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 14px;
+  margin: 3px 1px;
+  cursor: pointer;
+  position: absolute;
+  top: 50vh;
+    
+   
+} 
+*/
 
-
+/*
 .div {
+    height: 75px;
+    width: 75px;
+    color: white;
+    text-align: center;
+    vertical-align: middle;
+    border: 1px solid black;
+    background-color:grey;
+    float: left;
+    padding: 3em;
+  
+
+  }
+  */
+
+  /*divBtn{
+    
+      background-color: green;
+      border: none;
+      color: black;
+      padding: 5px 10px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 14px;
+      margin: 2px 2px;
+      cursor: pointer;
+
+  }
+  */
+
+  .divs{
+
     height: 50px;
     width: 50px;
     color: white;
     text-align: center;
-    border: 1px solid red;
-    background-color:black;
+    vertical-align: middle;
+    border: 1px solid black;
+    background-color:grey;
     float: left;
+    
+
   }
 
  

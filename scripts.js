@@ -1,23 +1,32 @@
 window.addEventListener('DOMContentLoaded', function () {
 
-    //Created div container
+    //Created div container and appended div container to the body
     let divContainer = document.createElement('div');
     document.body.appendChild(divContainer);
 
-    //Created button
+    //Created div element
+    let divBtn = document.createElement('div');
+    //Created button element
     let button = document.createElement('button');
-    let btnText = document.createTextNode('Add Square');
-    button.appendChild(btnText);
-    document.body.appendChild(button);
+    //Created text for button
+    let text = document.createTextNode('Add Square');
+    //Appended text to the button element.
+    button.appendChild(text);
+    //Appended button element (with text) to the div
+    divBtn.appendChild(button);
+    //Apended div to div container
+    //div.className = 'btn';
+    divContainer.appendChild(divBtn);
 
     //Created global variable for id increment.
     let i = 1;
 
     //Created function to add square (div) each time button is clicked.
     function insertSquare() {
+
         let div = document.createElement('div');
         let divText = document.createTextNode('Div ID:' + ' ' + i);
-        div.className = 'div';
+        div.className = 'divs';
         divContainer.appendChild(div);
         div.setAttribute('i', i);
         i++;
@@ -28,23 +37,23 @@ window.addEventListener('DOMContentLoaded', function () {
         });
 
         //Created event listener when mouse hovers over div, the id is displayed.
-        //div.addEventListener('mouseover', function () {
-       // div.appendChild(divText);
+        div.addEventListener('mouseover', function () {
+        div.appendChild(divText);
 
-       // });
+        });
 
         //Created event listener when mouse leaves the div, the id does not display.
-        //div.addEventListener('mouseleave', function () {
-        //divText.remove();
-        // });
+        div.addEventListener('mouseleave', function () {
+        divText.remove();
+        });
 
-      
-       
-         
-        div.addEventListener('moveover', hover);
-     
-        
-        div.addEventListener('mouseleave', removeHover);
+        //div.addEventListener('mouseover', function () {
+            //hover(this, divText)
+        //});
+
+        //div.addEventListener('mouseout', function () {
+           // removeHover(divText)
+       // });
 
 
         div.addEventListener('dblclick', function () {
@@ -66,11 +75,13 @@ window.addEventListener('DOMContentLoaded', function () {
         });
 
 
-
     }
 
 
-    button.addEventListener('click', insertSquare);
+    divBtn.addEventListener('click', insertSquare);
+
+
+
 
     //created an array with random colors
     let colors = [
@@ -89,18 +100,14 @@ window.addEventListener('DOMContentLoaded', function () {
         return colors[Math.floor(Math.random() * colors.length)];
     }
 
+   // function hover(box, divText) {
+        //box.appendChild(divText);
+   // }
 
-    function hover(divText) {
-        div.appendChild(divText);
-         //console.log(this.id);
-     }
+    //function removeHover(divText) {
+        //divText.remove();
 
-    function removeHover() {
-       divText.remove();
-    
-    }
-
-
+   // }
 
 
 });
