@@ -37,23 +37,23 @@ window.addEventListener('DOMContentLoaded', function () {
         });
 
         //Created event listener when mouse hovers over div, the id is displayed.
-        div.addEventListener('mouseover', function () {
-        div.appendChild(divText);
-
-        });
-
-        //Created event listener when mouse leaves the div, the id does not display.
-        div.addEventListener('mouseleave', function () {
-        divText.remove();
-        });
-
         //div.addEventListener('mouseover', function () {
-            //hover(this, divText)
+        //div.appendChild(divText);
+
         //});
 
-        //div.addEventListener('mouseout', function () {
-           // removeHover(divText)
+        //Created event listener when mouse leaves the div, the id does not display.
+        //div.addEventListener('mouseleave', function () {
+        //divText.remove();
        // });
+
+        div.addEventListener('mouseover', function () {
+            hover(this, divText)
+        });
+
+        div.addEventListener('mouseout', function () {
+           removeHover(divText)
+       });
 
 
         div.addEventListener('dblclick', function () {
@@ -100,14 +100,14 @@ window.addEventListener('DOMContentLoaded', function () {
         return colors[Math.floor(Math.random() * colors.length)];
     }
 
-   // function hover(box, divText) {
-        //box.appendChild(divText);
-   // }
+   function hover(box, divText) {
+        box.appendChild(divText);
+   }
 
-    //function removeHover(divText) {
-        //divText.remove();
+    function removeHover(divText) {
+        divText.remove();
 
-   // }
+   }
 
 
 });
