@@ -47,10 +47,16 @@ window.addEventListener('DOMContentLoaded', function () {
         //divText.remove();
         // });
 
+        // div.addEventListener('mouseover', function () {
+        //hover(this, divText)
+        //});
+
+        //Created event listener and called hover function.
         div.addEventListener('mouseover', function () {
-            hover(this, divText)
+            hover(div, divText)
         });
 
+        //Created event listener and called remove hover function.
         div.addEventListener('mouseout', function () {
             removeHover(divText)
         });
@@ -58,22 +64,26 @@ window.addEventListener('DOMContentLoaded', function () {
 
         div.addEventListener('dblclick', function () {
 
-            if (this.i % 2 === 0) {
-                if (this.nextSibling) {
-                    this.nextSibling.remove();
+            console.log(div.getAttribute('i'));
+
+            if (div.getAttribute('i') % 2 == 0) {
+                console.log('even');
+                if (div.nextSibling) {
+                    if (div.nextSibling.hasAttribute('i'))
+                        div.nextSibling.remove();
                 } else {
-                    alert("There are no more boxes!");
+                    alert('There are no more boxes!');
                 }
             } else {
-                if (this.previousSibling) {
-                    this.previousSibling.remove();
-                } else {
-                    alert("There are no more boxes!");
+                console.log('odd');
+                if (div.previousSibling) {
+                    div.previousSibling.remove(); 
+                    } else {
+                        alert('There are no more boxes!');
+                    }
                 }
-            }
 
-        });
-
+            });
 
     }
 
@@ -98,10 +108,17 @@ window.addEventListener('DOMContentLoaded', function () {
         return colors[Math.floor(Math.random() * colors.length)];
     }
 
-    function hover(box, divText) {
-        box.appendChild(divText);
+    //Created function show div id when mouse hovers over div
+    // function hover(box, divText) {
+    //box.appendChild(divText);
+    //}
+
+    //Created function show div id when mouse hovers over div
+    function hover(div, divText) {
+        div.appendChild(divText);
     }
 
+    //Created function to remove div id when mouse moves away from div
     function removeHover(divText) {
         divText.remove();
 
