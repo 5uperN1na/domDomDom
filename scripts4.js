@@ -61,30 +61,30 @@ window.addEventListener('DOMContentLoaded', function () {
             removeHover(divText)
         });
 
-
+        //Created event listener-double click button to test for even (if so, remove next div) or odd (remove previous div).  
+        //If it is even, and there is no square after even square, display an alert.  If it is odd, display an alert if there is not a previous div.
         div.addEventListener('dblclick', function () {
 
             console.log(div.getAttribute('i'));
 
+            //test for even
             if (div.getAttribute('i') % 2 == 0) {
                 console.log('even');
                 if (div.nextSibling) {
-                    if (div.nextSibling.hasAttribute('i'))
-                        div.nextSibling.remove();
+                    div.nextSibling.remove();
                 } else {
                     alert('There are no more boxes!');
                 }
             } else {
-                console.log('odd');
-                if (div.previousSibling) {
-                    div.previousSibling.remove(); 
-                    } else {
-                        alert('There are no more boxes!');
-                    }
+                console.log("odd");
+                if (div.previousSibling.hasAttribute('i')) {
+                    div.previousSibling.remove();
+                } else {
+                    alert('There are no more boxes!');
                 }
+            }
 
-            });
-
+        });
     }
 
     //Created event listener for Add Square button that calls insertSquare function.
